@@ -165,10 +165,10 @@ window.data = {
             "Z":[]
         },
         "Stars or constellations": {
-            "A":[],
-            "B":[],
-            "C":[],
-            "D":[],
+            "A":["Aries", "Andromeda", "Aquila", "Ara", "Aquarius", "Antlia", "Apus"],
+            "B":["Bootes"],
+            "C":["Caelum", "Camelopardalis", "Cancer", "Canes Venatici", "Canis Major", "Canis Minor", "Capricornus", "Carina", "Cassiopeia", "Centaurus," "Cepheus", "Cetus", "Chamaeleon", "Circinus", "Columba", "Coma Berenices", "Corona Australis", "Corona Borealis", "Corvus", "Crater", "Crux", "Cygnus"],
+            "D":["Delphinus", "Draco", "Dorado"],
             "E":[],
             "F":[],
             "G":[],
