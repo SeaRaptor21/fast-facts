@@ -139,7 +139,7 @@ window.data = {
         "Nobel Laureates": {
             "A":[],
             "B":[],
-            "C":[],
+            "C":["Curie"],
             "D":[],
             "E":[],
             "F":[],
@@ -180,10 +180,10 @@ window.data = {
             "M":[],
             "N":[],
             "O":[],
-            "P":[],
+            "P":["Pegasus"],
             "Q":[],
             "R":[],
-            "S":[],
+            "S":["Scorpio"],
             "T":[],
             "U":[],
             "V":[],
@@ -223,10 +223,10 @@ window.data = {
         "Rocks and minerals": {
             "A":["Amber"],
             "B":["Bronze"],
-            "C":["Chalk"],
+            "C":["Chalk","Coal"],
             "D":["Diamond"],
             "E":["Egyptian Jasper","Emerald"],
-            "F":["Flame Opal"],
+            "F":["Flame Opal","Fire opal"],
             "G":["Gold"],
             "H":["Honey Opal"],
             "I":["Iron"],
@@ -235,7 +235,7 @@ window.data = {
             "L":["Lapis Lazuli"],
             "M":["Milky Opal"],
             "N":["Nickel"],
-            "O":["Onyx"],
+            "O":["Onyx","Olivine","Opal"],
             "P":["Pearl Opal"],
             "Q":["Quartz"],
             "R":["Ruby"],
@@ -251,7 +251,7 @@ window.data = {
         "Anatomy (bones, muscles, etc)": {
             "A":[],
             "B":[],
-            "C":[],
+            "C":["Collarbone"],
             "D":[],
             "E":[],
             "F":[],
@@ -267,7 +267,7 @@ window.data = {
             "P":["Pectoral","Pectoralis Major"],
             "Q":[],
             "R":[],
-            "S":[],
+            "S":["Shoulder blades"],
             "T":["Trapezius","Triceps","Triceps Surae"],
             "U":[],
             "V":[],
@@ -277,7 +277,7 @@ window.data = {
             "Z":[]
         },
         "Diseases": {
-            "A":[],
+            "A":["Anthrax"],
             "B":[],
             "C":["COVID-19"],
             "D":["Dysentery"],
@@ -642,3 +642,4 @@ window.data = {
         }
     }
 }
+#amungus
