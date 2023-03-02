@@ -13,6 +13,39 @@ function shuffle(array) {
   return array;
 }
 
+(async () => {
+  console.log('Filling in missing answers')
+  var startTime = Date.now()
+  try {
+    for (var c = 0; c < data.categories.length; c++) {
+      for (var  l = 0; l < 26; l++) {
+        //console.log(`Checking ${data.categories[c]} letter ${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[l]}`);
+        if (data.answers[data.categories[c]]['ABCDEFGHIJKLMNOPQRSTUVWXYZ'[l]].length == 0) {
+        	var endpoint = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${data.categories[c]} starting with ${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[l]}`;
+          var response = await fetch(endpoint);
+          if (!response.ok) {
+            throw Error(response.statusText);
+          }
+          var json = await response.json();
+          var res = [];
+          json.query.search.forEach(result => {
+            if (result.title[0].toUpperCase() == 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[l]) {
+              res.push(result.title.replace(/ *\([^)]*\) */g, "").trim());
+            }
+          });
+          //console.log(res);
+          data.answers[data.categories[c]]['ABCDEFGHIJKLMNOPQRSTUVWXYZ'[l]] = res
+        }
+      }
+    }
+    console.log('Successfully filled in missing answers');
+    console.log('Total time: '+((Date.now()-startTime)/1000)+' seconds');
+    console.log(data.answers);
+  } catch (e) {
+    console.log('An error ocurred when filling in answers'+'\nError details: '+e+'\nSkipping filling in answers')
+  }
+})();
+
 function clear() {
   var cells = [
     [document.querySelector("#A1"),document.querySelector("#A2"),document.querySelector("#A3"),document.querySelector("#A4"),document.querySelector("#A5")],
