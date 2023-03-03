@@ -53,7 +53,7 @@ window.data = {
             "Z":["Zinc","Zirconium"]
         },
         "Units of measurement": {
-            "A":["Acre","Angstrom","Amp","Ampere","AU","Astronomical Unit"],
+            "A":["Acre","Angstrom","Amp","Ampere","AU","Astronomical Unit","Apgar"],
             "B":["Baker's Dozen","Bar","Bel","Byte","Becquerel"],
             "C":["Centimeter","Centiliter","Centigram","Centigrade","Candela","Coulomb","Carat","Century","Calorie","Cubit","Curie","Cup"],
             "D":["Decibel","Decimeter","Degree","Day","Dekagram","Decameter"],
@@ -71,7 +71,7 @@ window.data = {
             "P":["Petabyte","Parsec","Pascal","Point","Pixel","Pint","Petaflops"],
             "Q":["Quart"],
             "R":["Radian","Rad","Rem","RPM"],
-            "S":["Second","Sievert","Score","Scoville Unit","Scoville","Smoot","Steradian"],
+            "S":["Second","Sievert","Score","Scoville Unit","Scoville","Smoot","Steradian","Schmidt Scale","Schmidt"],
             "T":["Tesla","Terabyte","Terahertz","Teraflops","Tablespoon","Teaspoon","Ton"],
             "U":[],
             "V":["Volt"],
