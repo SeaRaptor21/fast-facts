@@ -1,7 +1,7 @@
 body {
   text-align: center;
   font-family: arial,sans;
-  background-color: #fff
+  background-color: #fff;
 }
 
 p {
@@ -31,11 +31,11 @@ td, th {
 table {
   border-collapse: collapse;
   width: 100%;
-  display: none
+  display: none;
 }
 
 #check {
-  display: none
+  display: none;
 }
 
 button {
@@ -49,4 +49,29 @@ button {
 
 button:hover {
   background-color: #ccc;
+}
+
+#info {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+}
+
+#info_text {
+  display: inline;
+  font-size: 0.5em;
+}
+
+#progress_bar {
+  width: 100px;
+  height: 5px;
+  background-color: #ddd;
+  text-align: left;
+}
+
+#progress {
+  width: 0;
+  height: 100%;
+  background-color: #999;
 }
