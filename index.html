@@ -17,6 +17,7 @@
       <th class="h" id="h3">3</th>
       <th class="h" id="h4">4</th>
       <th class="h" id="h5">5</th>
+      <th class="h"></th>
     </tr>
     <tr>
       <td class="l" id="A">A</td>
@@ -25,6 +26,7 @@
       <td><input id="A3"></td>
       <td><input id="A4"></td>
       <td><input id="A5"></td>
+      <td id="A_score">Letter Score:<br></td>
     </tr>
     <tr>
       <td class="l" id="B">B</td>
@@ -33,6 +35,7 @@
       <td><input id="B3"></td>
       <td><input id="B4"></td>
       <td><input id="B5"></td>
+      <td id="B_score">Letter Score:<br></td>
     </tr>
     <tr>
       <td class="l" id="C">C</td>
@@ -41,6 +44,7 @@
       <td><input id="C3"></td>
       <td><input id="C4"></td>
       <td><input id="C5"></td>
+      <td id="C_score">Letter Score:<br></td>
     </tr>
     <tr>
       <td class="l" id="D">D</td>
@@ -49,6 +53,7 @@
       <td><input id="D3"></td>
       <td><input id="D4"></td>
       <td><input id="D5"></td>
+      <td id="D_score">Letter Score:<br></td>
     </tr>
     <tr>
       <td class="l" id="E">E</td>
@@ -57,11 +62,27 @@
       <td><input id="E3"></td>
       <td><input id="E4"></td>
       <td><input id="E5"></td>
+      <td id="E_score">Letter Score:<br></td>
+    </tr>
+    <tr>
+      <td class="l"></td>
+      <td id="c1_score">Category Score:<br></td>
+      <td id="c2_score">Category Score:<br></td>
+      <td id="c3_score">Category Score:<br></td>
+      <td id="c4_score">Category Score:<br></td>
+      <td id="c5_score">Category Score:<br></td>
+      <td id="total_score">Total Score:<br></td>
     </tr>
   </table>
   <button id="check" onclick="check()">Check</button>
   <button id="gen" onclick="generate()">Generate New</button>
-  <script src="categories.json"></script>
-  <script src="main.js"></script>
+  <div id="info">
+    <p id="info_text">
+      Filling in missing answers
+    </p>
+    <div id="progress_bar">
+      <div id="progress"></div>
+    </div>
+  </div>
 </body>
 </html>
