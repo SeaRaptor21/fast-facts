@@ -14,7 +14,7 @@ function shuffle(array) {
 }
 
 (async () => {
-  console.log('Filling in missing answers')
+  document.querySelector('#info_text').innerHTML = 'Filling in missing answers';
   var startTime = Date.now()
   try {
     for (var c = 0; c < data.categories.length; c++) {
@@ -36,13 +36,14 @@ function shuffle(array) {
           //console.log(res);
           data.answers[data.categories[c]]['ABCDEFGHIJKLMNOPQRSTUVWXYZ'[l]] = res
         }
+      document.querySelector('#progress').style.width = ((c+1)*26-(27-l))/(data.categories.length*26)*100+'%'
       }
     }
-    console.log('Successfully filled in missing answers');
-    console.log('Total time: '+((Date.now()-startTime)/1000)+' seconds');
+    document.querySelector('#info_text').innerHTML = 'Successfully filled in missing answers';
+    document.querySelector('#info_text').innerHTML += '<br>Total time: '+((Date.now()-startTime)/1000)+' seconds';
     console.log(data.answers);
   } catch (e) {
-    console.log('An error ocurred when filling in answers'+'\nError details: '+e+'\nSkipping filling in answers')
+    document.querySelector('#info_text').innerHTML = 'An error ocurred when filling in answers'+'\nError details: '+e+'\nSkipping filling in answers';
   }
 })();
 
@@ -60,6 +61,16 @@ function clear() {
       cells[y][x].parentElement.style.backgroundColor = "#fff";
     }
   }
+  var letter_score_elems = [document.querySelector("#A_score"),document.querySelector("#B_score"),document.querySelector("#C_score"),document.querySelector("#D_score"),document.querySelector("#E_score")]
+  var category_score_elems = [document.querySelector("#c1_score"),document.querySelector("#c2_score"),document.querySelector("#c3_score"),document.querySelector("#c4_score"),document.querySelector("#c5_score")]
+  var total_score_elem = document.querySelector("#total_score")
+  for (var e=0; e<5; e++) {
+    letter_score_elems[e].innerHTML = "Letter Score:<br>"
+  }
+  for (var e=0; e<5; e++) {
+    category_score_elems[e].innerHTML = "Category Score:<br>"
+  }
+  total_score_elem.innerHTML = "Total Score:<br>"
 }
 
 var tableAnswers;
@@ -140,6 +151,11 @@ function check() {
     [document.querySelector("#D1"),document.querySelector("#D2"),document.querySelector("#D3"),document.querySelector("#D4"),document.querySelector("#D5")],
     [document.querySelector("#E1"),document.querySelector("#E2"),document.querySelector("#E3"),document.querySelector("#E4"),document.querySelector("#E5")]
   ];
+  var letter_score_elems = [document.querySelector("#A_score"),document.querySelector("#B_score"),document.querySelector("#C_score"),document.querySelector("#D_score"),document.querySelector("#E_score")]
+  var category_score_elems = [document.querySelector("#c1_score"),document.querySelector("#c2_score"),document.querySelector("#c3_score"),document.querySelector("#c4_score"),document.querySelector("#c5_score")]
+  var total_score_elem = document.querySelector("#total_score")
+  var category_scores = [0,0,0,0,0]
+  var letter_scores = [0,0,0,0,0]
   for (var y=0; y<5; y++) {
     for (var x=0; x<5; x++) {
       var cellAnswers = tableAnswers[y][x];
@@ -147,12 +163,20 @@ function check() {
       if (cellAnswers.includes(cells[y][x].value.toLowerCase())) {
         cells[y][x].value += " ✓";
         cells[y][x].parentElement.style.backgroundColor = "#bfb";
+        letter_scores[y]++;
+        category_scores[x]++;
       } else {
         cells[y][x].value += " ✗";
         cells[y][x].parentElement.style.backgroundColor = "#fbb";
       }
     }
   }
+  letter_scores.forEach(s => {s=s**2});
+  category_scores.forEach(s => {s=s**2});
+  letter_score_elems.forEach(e => {e.innerHTML += letter_scores[letter_score_elems.indexOf(e)]});
+  category_score_elems.forEach(e => {e.innerHTML += category_scores[category_score_elems.indexOf(e)]});
+  var total_score = letter_scores.reduce((a,b)=>a+b,0)+category_scores.reduce((a,b)=>a+b,0)
+  total_score_elem.innerHTML += total_score;
   document.querySelector('#check').disabled = true;
   for (var c=0; c<25; c++) {
     document.querySelectorAll('input')[c].disabled = true;
