@@ -89,8 +89,7 @@ function generate() {
     document.querySelectorAll('input')[c].disabled = false;
   }
   //var categories = ["1","2","3","4","5","6","7","8","9","10"];
-  console.log("#0");
-  var categories = data["categories"];
+  var categories = data.categories;
   var letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
   /*var answers = {"1":{"A":["A1"],"B":["B1"],"C":["C1"],"D":["D1"],"E":["E1"],"F":["F1"],"G":["G1"],"H":["H1"],"I":["I1"],"J":["J1"],"K":["K1"],"L":["L1"],"M":["M1"],"N":["N1"],"O":["O1"],"P":["P1"],"Q":["Q1"],"R":["R1"],"S":["S1"],"T":["T1"],"U":["U1"],"V":["V1"],"W":["W1"],"X":["X1"],"Y":["Y1"],"Z":["Z1"]},
                 "2":{"A":["A2"],"B":["B2"],"C":["C2"],"D":["D2"],"E":["E2"],"F":["F2"],"G":["G2"],"H":["H2"],"I":["I2"],"J":["J2"],"K":["K2"],"L":["L2"],"M":["M2"],"N":["N2"],"O":["O2"],"P":["P2"],"Q":["Q2"],"R":["R2"],"S":["S2"],"T":["T2"],"U":["U2"],"V":["V2"],"W":["W2"],"X":["X2"],"Y":["Y2"],"Z":["Z2"]},
@@ -102,8 +101,7 @@ function generate() {
                 "8":{"A":["A8"],"B":["B8"],"C":["C8"],"D":["D8"],"E":["E8"],"F":["F8"],"G":["G8"],"H":["H8"],"I":["I8"],"J":["J8"],"K":["K8"],"L":["L8"],"M":["M8"],"N":["N8"],"O":["O8"],"P":["P8"],"Q":["Q8"],"R":["R8"],"S":["S8"],"T":["T8"],"U":["U8"],"V":["V8"],"W":["W8"],"X":["X8"],"Y":["Y8"],"Z":["Z8"]},
                 "9":{"A":["A9"],"B":["B9"],"C":["C9"],"D":["D9"],"E":["E9"],"F":["F9"],"G":["G9"],"H":["H9"],"I":["I9"],"J":["J9"],"K":["K9"],"L":["L9"],"M":["M9"],"N":["N9"],"O":["O9"],"P":["P9"],"Q":["Q9"],"R":["R9"],"S":["S9"],"T":["T9"],"U":["U9"],"V":["V9"],"W":["W9"],"X":["X9"],"Y":["Y9"],"Z":["Z9"]},
                 "10":{"A":["A10"],"B":["B10"],"C":["C10"],"D":["D10"],"E":["E10"],"F":["F10"],"G":["G10"],"H":["H10"],"I":["I10"],"J":["J10"],"K":["K10"],"L":["L10"],"M":["M10"],"N":["N10"],"O":["O10"],"P":["P10"],"Q":["Q10"],"R":["R10"],"S":["S10"],"T":["T10"],"U":["U10"],"V":["V10"],"W":["W10"],"X":["X10"],"Y":["Y10"],"Z":["Z10"]}}*/
-  var answers = data["answers"];
-  console.log("#1");
+  var answers = data.answers;
   shuffle(categories);
   shuffle(letters);
   var h1 = document.querySelector('#h1');
@@ -121,7 +119,6 @@ function generate() {
   for (var i = 0; i<5; i++) {
     left[i].innerHTML = letters[i];
   }
-  console.log("#2");
   for (var i = 0; i<5; i++) {
     top[i].innerHTML = categories[i];
   }
